@@ -63,4 +63,6 @@ Explaination : if user writed : hi after that bot will say `Hello!` Because `hi`
 [1] 'clear' : for clear chat
 [2] 'exit'  : break code and exit from E0
 ```
-Copright To Error
+
+
+**Copright To Error**
