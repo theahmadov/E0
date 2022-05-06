@@ -60,8 +60,10 @@ Explaination : if user writed : hi after that bot will say `Hello!` Because `hi`
 
 ## Some commands
 ```
-[1] 'clear' : for clear chat
-[2] 'exit'  : break code and exit from E0
+[1] 'clear' : For clear chat
+[2] 'exit'  : Break code and exit from E0
+[3] 'menu'  : To print menu (other functions Of bot)
+[4] 'help'  : To list commands
 ```
 
 
