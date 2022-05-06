@@ -1,6 +1,24 @@
 # E0 AI Chat Bot
 Based on the message, it prints the answer with the highest probability using probability from the database.
 
+# E0 Probability Algorithm For AI
+```python
+def probability(um, rw, schat=False, req=[]):
+    count = 0
+    hw = True
+    for w in um:
+        if w in rw:
+            count += 1
+    per = float(count) / float(len(rw))
+    for w in req:
+        if w not in um:
+            hw = False
+            break
+    if hw or schat:
+        return int(per * 100)
+    else:
+        return 0
+```
 # E1 Packet
 This packet for advice codes and if there any result for message. It will write `I didnt understand sorry... Please reply.` or something.
 ```py
@@ -45,3 +63,4 @@ Explaination : if user writed : hi after that bot will say `Hello!` Because `hi`
 [1] 'clear' : for clear chat
 [2] 'exit'  : break code and exit from E0
 ```
+Copright To Error
