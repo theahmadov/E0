@@ -3,7 +3,7 @@ import time
 from colorama import Fore,Back,Style
 from rich.progress import track
 import re
-import E1 as e0
+import E1 as E0
 
 def loading(txt,color):
     for _ in track(range(100), description=f'[{color}]{txt}'):
@@ -40,13 +40,13 @@ def check_all_messages(message):
     dns('Sure!',['want', 'to', 'be', 'my','friend'],schat=True)
     dns('My name is E0. And I created by Err0r. Err0r is python,cpp and ruby developer and competitive programmer.',['name', 'who', 'who are you', 'who are you', 'who are you?','are you?','are you'],schat=True)
     dns('I know python,c and java script languages.',['want', 'ruby', 'cpp', 'python','which language','do you know ?','know?','know','programming language'],schat=True)
-    dns(e0.R_ADVICE, ['give', 'advice'], req=['advice'])
-    dns(e0.R_EATING, ['what', 'you', 'eat'], req=['you', 'eat'])
-    dns(e0.R_GAME, ['what', 'game', 'you','play'], req=['game', 'play'])
+    dns(E0.R_ADVICE, ['give', 'advice'], req=['advice'])
+    dns(E0.R_EATING, ['what', 'you', 'eat'], req=['you', 'eat'])
+    dns(E0.R_GAME, ['what', 'game', 'you','play'], req=['game', 'play'])
 
     bestm = max(high, key=high.get)
 
-    return e0.unknown() if high[bestm] < 1 else bestm
+    return E0.unknown() if high[bestm] < 1 else bestm
 
 def chat(user_input):
     sm = re.split(r'\s+|[,;?!.-]\s*', user_input.lower())
@@ -65,7 +65,7 @@ def chatbot():
 
     """)
     
-    loading("Loading...","green")
+    loading("Loading...","yellow")
     while True:
         x = input(Fore.RED+'You : ')
         print(Fore.YELLOW+'Bot : ' + chat(x) )
