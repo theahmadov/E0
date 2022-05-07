@@ -15,10 +15,10 @@ class bcolors:
     RESET = '\033[0m'
 
 os.system("clear")
-logging.basicConfig(level=logging.DEBUG, filename="log.txt", filemode="a+",
+logging.basicConfig(level=logging.DEBUG, filename="./data/log.txt", filemode="a+",
                         format="%(asctime)-15s %(levelname)-8s %(message)s")
 
-face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+face_cascade = cv2.CascadeClassifier('./data/haarcascade_frontalface_default.xml')
   
 cap = cv2.VideoCapture(0)
   
@@ -36,7 +36,6 @@ while True:
         roi_gray = gray[y:y+h, x:x+w]
         roi_color = img[y:y+h, x:x+w]
         logging.info(Fore.GREEN+"[+] Face Dedected. Waiting Command... ")
-        time.sleep(0.01)
   
 
         cv2.imshow('img',img)
@@ -53,8 +52,8 @@ while True:
         print(Fore.GREEN+"[+] Target Destroyed...")
         logging.info("[+] Target Destroyed...")
         print(Fore.RED+"[+] Image Saving...")
-        logging.info(Fore.GREEN+"[+] Image Saved Succesfully... (log.txt)")
-        filename = 'log.jpg'
+        logging.info(Fore.GREEN+"[+] Image Saved Succesfully... (./log/log.txt)")
+        filename = './log/log.jpg'
         cv2.imwrite(filename, img)
         break
 
