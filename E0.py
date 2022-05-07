@@ -42,11 +42,14 @@ def menu():
             -_________________-_________________-
             
     """)
+    
     print("[1] Face Dedection")
+    print("[2] Object Dedection")
     print("")
     n = input(Fore.RED+"Please select : ")
     if n=="1":
         os.system("python3 EFace.py")
+
 
 
 def help():
@@ -56,13 +59,20 @@ def help():
             -_________________-_________________-
             |                                   |
             |  |-_-| Welcome to E0 Bot!  |-_-|  |
-            -_________________-_________________-
+            -_________________-_________________- 
             
     """)
     print(Fore.YELLOW+"help  : To List Commands")
     print(Fore.YELLOW+"menu  : To Print Menu (Other Functions Of Bot)")
     print(Fore.YELLOW+"clear : To Clear Chat")
     print(Fore.YELLOW+"exit  : To Exit")
+    print(Fore.YELLOW+"dir   : To Dir Files")
+    print(Fore.YELLOW+"ls    : To List Files In Directory")
+    print(Fore.YELLOW+"face  : To Run Face Dedection")
+
+
+
+
 
 def check_all_messages(message):
     high = {}
@@ -81,9 +91,26 @@ def check_all_messages(message):
     dns('',["play?","game?",'what we can do?','what we can do','what we can','what we can?','what can you do?','what can you do','what can you?',"what can you"],schat=True)
     dns('Yess...',['are you okey?','you okey?','you ok?','you okey'],schat=True)
     dns('I am feeling bad.','I am sad. Hope you are better.',['feel?','how are you feel?','feelings?'],req='feel')
+    
+    dns('WOW', ['wow', 'awsome', 'good', 'cool'], schat=True)
     dns(E0.R_ADVICE, ['give', 'advice'], req=['advice'])
     dns(E0.R_EATING, ['what', 'you', 'eat'], req=['you', 'eat'])
     dns(E0.R_GAME, ['what', 'game', 'you','play'], req=['game', 'play'])
+    
+    dns("""Elon Musk, aka Elon Reeve Musk, is an engineer, industrial designer, tech entrepreneur, 
+and philanthropist. Apart from his birthplace of South Africa, he is a Canadian and US citizen 
+and lives in the USA, where he immigrated at the age of 20.
+    """,['elon musk','musk','elon'],schat=True)
+    
+    dns("""William Henry Bill Gates III or better known as Bill Gates, American entrepreneur,
+software developer, author, investor and businessman
+    """,['bill gates','bill','gates'],schat=True)
+
+    dns("""Jeffrey Preston Bezos is an American internet entrepreneur, industrialist, media owner, and investor,
+best known as the founder, CEO, and chairman of the worldwide technology company Amazon. Before 2017, 
+Bezos, who was one of the first hundred billionaires on the Forbes wealth index list, became the richest 
+man in the world after 2017.
+    """,['jeff','bezos','jeff bezos'],schat=True)
 
     bestm = max(high, key=high.get)
 
@@ -100,8 +127,8 @@ def chatbot():
               
             -_________________-_________________-
             |                                   |
-            |  |-_-| Welcome to E0 Bot!  |-_-|  |
-            -_________________-_________________-
+            |  |-_-| Welcome to E0 Bot!  |-_-|  | 
+            -_________________-_________________- 
             
     """)
     
@@ -109,12 +136,18 @@ def chatbot():
     while True:
         x = input(Fore.RED+'You : ')
         print(Fore.YELLOW+'Bot : ' + chat(x) )
-        if(x == "exit" or x == "quit"):
+        if(x == "exit" or x == "quit" or x == 'break'):
             print(Fore.BLACK+"Exitting...")
             time.sleep(2)
             break
         if(x == "list" or x == "help"):
             help()
+        if(x == "ls" or x == "LS"):
+            os.system('ls')
+        if(x == "FACE" or x == "face"):
+            os.system('python3 EFace.py')
+        if(x == "dir" or x == "DIR"):
+            os.system("dir")
         if(x == "menu"):
             menu()
         elif(x == "clear"):
