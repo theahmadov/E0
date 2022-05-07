@@ -75,6 +75,7 @@ def help():
     print(Fore.YELLOW+"dir   : To Dir Files")
     print(Fore.YELLOW+"ls    : To List Files In Directory")
     print(Fore.YELLOW+"face  : To Run Face Dedection")
+    print(Fore.YELLOW+"info  : To See E0's Info")
 
 def info():
     print(Fore.BLUE+"""
@@ -208,5 +209,5 @@ print(Fore.YELLOW+"""
         -_________________-_________________- 
             
 """)
-name = input(Fore.MAGENTA+"Please input your name : ")
+name = input(Fore.MAGENTA+"Hello friend! please enter your name : ")
 chatbot(name)
