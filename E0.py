@@ -87,7 +87,7 @@ def info():
             Hi ? Are you there ? Ok... I will say 
             story. I created by Error. His other 
             name is TheSadError. He created my on 
-            5 may 2022 . He used python3.9 . And he 
+            5 May 2022 . He used python3.9 . And he 
             added E1 packet for unknown things. It 
             working awsomely. And I am open source. 
             This means you can see my code and can edit
@@ -185,7 +185,7 @@ def chatbot(name):
             break
         if(x == "list" or x == "help"):
             help()
-        if(x == "info" or x == "e0"):
+        if(x == "info" or x == "E0"):
             info()
         elif(x == "ls" or x == "LS"):
             os.system('ls')
