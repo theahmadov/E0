@@ -40,16 +40,13 @@ def menu():
             |                                   |
             |  |-_-| Welcome to E0 Bot!  |-_-|  |
             -_________________-_________________-
-            
+                    
+                    [1] Face Dedection  
     """)
-    
-    print("[1] Face Dedection")
-    print("[2] Object Dedection")
     print("")
     n = input(Fore.RED+"Please select : ")
     if n=="1":
         os.system("python3 EFace.py")
-
 
 
 def help():
@@ -91,6 +88,7 @@ def check_all_messages(message):
     dns('',["play?","game?",'what we can do?','what we can do','what we can','what we can?','what can you do?','what can you do','what can you?',"what can you"],schat=True)
     dns('Yess...',['are you okey?','you okey?','you ok?','you okey'],schat=True)
     dns('I am feeling bad.','I am sad. Hope you are better.',['feel?','how are you feel?','feelings?'],req='feel')
+    dns('Ah. I understand. I live in Github Repo. Write "github" for see it. My Discord :err0r#4018 ',['social','social media','discord','media'],schat=True)
     
     dns('WOW', ['wow', 'awsome', 'good', 'cool'], schat=True)
     dns(E0.R_ADVICE, ['give', 'advice'], req=['advice'])
@@ -142,13 +140,13 @@ def chatbot():
             break
         if(x == "list" or x == "help"):
             help()
-        if(x == "ls" or x == "LS"):
+        elif(x == "ls" or x == "LS"):
             os.system('ls')
-        if(x == "FACE" or x == "face"):
+        elif(x == "FACE" or x == "face"):
             os.system('python3 EFace.py')
-        if(x == "dir" or x == "DIR"):
+        elif(x == "dir" or x == "DIR"):
             os.system("dir")
-        if(x == "menu"):
+        elif(x == "menu"):
             menu()
         elif(x == "clear"):
             chatbot()
