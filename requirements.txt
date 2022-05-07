@@ -1,0 +1,9 @@
+opencv-python
+os
+time
+colorama
+re
+requests
+bs4
+csv
+logging
