@@ -64,6 +64,8 @@ Explaination : if user writed : hi after that bot will say `Hello!` Because `hi`
 [2] 'exit'  : Break code and exit from E0
 [3] 'menu'  : To print menu (other functions Of bot)
 [4] 'help'  : To list commands
+[5] 'dir'   : To dir files
+[6] 'ls'    : To list files in directory
 ```
 
 
