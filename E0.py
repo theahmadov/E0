@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 import csv
 import logging
 import cv2 
-
+from tqdm import tqdm
 
 """
 If you use windows please change
@@ -19,9 +19,7 @@ os.system("cls")
 than it will work
 """
 
-def loading(txt,color):
-    for _ in track(range(100), description=f'[{color}]{txt}'):
-        time.sleep(0.01)
+
 
 def probability(um, rw, schat=False, req=[]):
     count = 0
@@ -43,7 +41,7 @@ def probability(um, rw, schat=False, req=[]):
 
 def menu():
     os.system("clear")
-    print(Fore.YELLOW+"""
+    print(Fore.GREEN+"""
               
             -_________________-_________________-
             |                                   |
@@ -53,14 +51,14 @@ def menu():
                     [1] Face Dedection  
     """)
     print("")
-    n = input(Fore.RED+"Please select : ")
+    n = input(Fore.YELLOW+"Please select : ")
     if n=="1":
         os.system("python3 EFace.py")
 
 
 def help():
     os.system("clear")
-    print(Fore.YELLOW+"""
+    print(Fore.GREEN+"""
               
             -_________________-_________________-
             |                                   |
@@ -68,16 +66,17 @@ def help():
             -_________________-_________________- 
             
     """)
-    print(Fore.YELLOW+"help  : To List Commands")
-    print(Fore.YELLOW+"menu  : To Print Menu (Other Functions Of Bot)")
-    print(Fore.YELLOW+"clear : To Clear Chat")
-    print(Fore.YELLOW+"exit  : To Exit")
-    print(Fore.YELLOW+"dir   : To Dir Files")
-    print(Fore.YELLOW+"ls    : To List Files In Directory")
-    print(Fore.YELLOW+"face  : To Run Face Dedection")
-    print(Fore.YELLOW+"info  : To See E0's Info")
+    print(Fore.GREEN+"help  : To List Commands")
+    print(Fore.GREEN+"menu  : To Print Menu (Other Functions Of Bot)")
+    print(Fore.GREEN+"clear : To Clear Chat")
+    print(Fore.GREEN+"exit  : To Exit")
+    print(Fore.GREEN+"dir   : To Dir Files")
+    print(Fore.GREEN+"ls    : To List Files In Directory")
+    print(Fore.GREEN+"face  : To Run Face Dedection")
+    print(Fore.GREEN+"info  : To See E0's Info")
 
 def info():
+    os.system("clear")
     print(Fore.BLUE+"""
     
             -_________________-_________________-
@@ -165,28 +164,26 @@ def chat(user_input):
 
 def chatbot(name):
     os.system('clear')
-    print(Fore.YELLOW+"""
+    print(Fore.GREEN+"""
               
             -_________________-_________________-
             |                                   |
-            |  |-_-| Welcome to E0 Bot!  |-_-|  | 
+            |  |-_-| Welcome to E0 Bot!  |-_-|  |
             -_________________-_________________- 
             
     """)
     
-    loading("Loading...","yellow")
-    
     while True:
 
-        x = input(Fore.RED+f'[{name}] : ')
-        print(Fore.YELLOW+'[E0] : ' + chat(x) )
+        x = input(Fore.YELLOW+f'[{name}] : ')
+        print(Fore.GREEN+'[E0] : ' + chat(x) )
         if(x == "exit" or x == "quit" or x == 'break'):
             print(Fore.BLACK+"Exitting...")
             time.sleep(2)
             break
         if(x == "list" or x == "help"):
             help()
-        if(x == "info" or x == "E0"):
+        elif(x == "info" or x == "E0"):
             info()
         elif(x == "ls" or x == "LS"):
             os.system('ls')
@@ -198,10 +195,11 @@ def chatbot(name):
             menu()
         elif(x == "clear"):
             chatbot(name)
-
+        elif(x == "load"):
+            os.system("bash ./data/load.sh")
 
 os.system("clear")
-print(Fore.YELLOW+"""
+print(Fore.GREEN+"""
           
         -_________________-_________________-
         |                                   |
@@ -209,5 +207,8 @@ print(Fore.YELLOW+"""
         -_________________-_________________- 
             
 """)
-name = input(Fore.MAGENTA+"Hello friend! please enter your name : ")
-chatbot(name)
+if __name__ == "__main__":
+
+    os.system("bash ./data/load.sh")
+    name = input(Fore.BLUE+"Hello friend! please enter your name : ")
+    chatbot(name)
