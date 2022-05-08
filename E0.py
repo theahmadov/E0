@@ -21,20 +21,18 @@ os.system("cls")
 than it will work
 """
 
-
-
-def probability(um, rw, schat=False, req=[]):
+def probability(w1, w2, chat=False, req=[]):
     count = 0
-    hw = True
-    for w in um:
-        if w in rw:
+    bool = True
+    for i in w1:
+        if i in w2:
             count += 1
-    per = float(count) / float(len(rw))
-    for w in req:
-        if w not in um:
-            hw = False
+    per = float(count) / float(len(w2))
+    for i in req:
+        if i not in w1:
+            bool = False
             break
-    if hw or schat:
+    if bool or chat:
         return int(per * 100)
     else:
         return 0
@@ -51,14 +49,15 @@ def menu():
             -_________________-_________________-
                     
                     [1] Face Dedection  
-                    [1] Play Snake Apple Game (I am the snake)  
+                    [2] Translate 
+                    [3] Play Snake Apple Game (I am the snake)  
     """)
     print("")
     n = input(Fore.YELLOW+"Please select : ")
     if n=="1":
-        os.system("python3 EFace.py")
-    if n=="2":
-        os.system("python3 ./data/snake.py")
+        os.system("python3 ./scripts/EFace.py")
+    if n=="3":
+        os.system("python3 ./scripts/snake.py")
 
 def help():
     os.system("clear")
@@ -104,32 +103,32 @@ def info():
             User input a sentence or words probability
             function searching for probability. Which words 
             probability suitability is bigger in database
-            E0 prints answear of the word base. Its simple AI. 
+            E0 prints answear of the w1 base. Its simple AI. 
 
     """)
 
 
 def check_all_messages(message):
     high = {}
-    def dns(bchat, lw, schat=False, req=[]):
+    def dns(bchat, lw, chat=False, req=[]):
         nonlocal high
-        high[bchat] = probability(message, lw, schat, req)
+        high[bchat] = probability(message, lw, chat, req)
     # Simple
-    dns('Hello!', ['hello', 'hi', 'hey', 'sup', 'heyo','hola','salam','merhaba','selam','السلام عليكم','عليكم','السلام'], schat=True)
-    dns('See you!', ['bye', 'goodbye'], schat=True)
+    dns('Hello!', ['hello', 'hi', 'hey', 'sup', 'heyo','hola','salam','merhaba','selam','السلام عليكم','عليكم','السلام'], chat=True)
+    dns('See you!', ['bye', 'goodbye'], chat=True)
     dns('I\'m doing fine, and you?', ['how', 'are', 'you', 'doing'], req=['how'])
-    dns('You\'re welcome!', ['thank', 'thanks'], schat=True)
+    dns('You\'re welcome!', ['thank', 'thanks'], chat=True)
     dns('Thank you!', ['i', 'love', 'code', 'palace'], req=['code', 'palace'])
-    dns('Sure!',['want', 'to', 'be', 'my','friend'],schat=True)
-    dns('Sure! We can play snake game. I am snake and you are the apple : ) You must run. Or I will eat you. Type snake to play.',['oyun', 'birlikte', 'togather', 'play togather','you and me'],schat=True)
-    dns('My name is E0. And I created by Err0r. Err0r is python,cpp and ruby developer and competitive programmer.',['name', 'who', 'who are you', 'who are you', 'who are you?','are you?','are you'],schat=True)
-    dns('I know python,c and java script languages.',['want', 'ruby', 'cpp', 'python','which language','do you know ?','know?','know','programming language'],schat=True)
-    dns('',["play?","game?",'what we can do?','what we can do','what we can','what we can?','what can you do?','what can you do','what can you?',"what can you"],schat=True)
-    dns('Yess...',['are you okey?','you okey?','you ok?','you okey'],schat=True)
-    dns('Ah. I understand. I live in Github Repo. Write "github" for see it. My Discord :err0r#4018 ',['social','social media','discord','media'],schat=True)
-    dns('Some Music Advices : Old Town Road , Montero , SR - Welcome To Brixton , 6 For 6',['music','musik','muzik'],schat=True)
+    dns('Sure!',['want', 'to', 'be', 'my','friend'],chat=True)
+    dns('Sure! We can play snake game. I am snake and you are the apple : ) You must run. Or I will eat you. Type snake to play.',['oyun', 'birlikte', 'togather', 'play togather','you and me'],chat=True)
+    dns('My name is E0. And I created by Err0r. Err0r is python,cpp and ruby developer and competitive programmer.',['name', 'who', 'who are you', 'who are you', 'who are you?','are you?','are you'],chat=True)
+    dns('I know python,c and java script languages.',['want', 'ruby', 'cpp', 'python','which language','do you know ?','know?','know','programming language'],chat=True)
+    dns('',["play?","game?",'what we can do?','what we can do','what we can','what we can?','what can you do?','what can you do','what can you?',"what can you"],chat=True)
+    dns('Yess...',['are you okey?','you okey?','you ok?','you okey'],chat=True)
+    dns('Ah. I understand. I live in Github Repo. Write "github" for see it. My Discord :err0r#4018 ',['social','social media','discord','media'],chat=True)
+    dns('Some Music Advices : Old Town Road , Montero , SR - Welcome To Brixton , 6 For 6',['music','musik','muzik'],chat=True)
     
-    dns('WOW', ['wow', 'awsome', 'good', 'good' , 'col' ,'cool'], schat=True)
+    dns('WOW', ['wow', 'awsome', 'good', 'good' , 'col' ,'cool'], chat=True)
     dns(E0.R_ADVICE, ['give', 'advice'], req=['advice'])
     dns(E0.R_EATING, ['what', 'you', 'eat'], req=['you', 'eat'])
     dns(E0.R_GAME, ['what', 'game', 'you','play'], req=['game', 'play'])
@@ -139,23 +138,23 @@ def check_all_messages(message):
     dns("""Elon Musk, aka Elon Reeve Musk, is an engineer, industrial designer, tech entrepreneur, 
 and philanthropist. Apart from his birthplace of South Africa, he is a Canadian and US citizen 
 and lives in the USA, where he immigrated at the age of 20.
-    """,['elon musk','musk','elon'],schat=True)
+    """,['elon musk','musk','elon'],chat=True)
     
     dns("""William Henry Bill Gates III or better known as Bill Gates, American entrepreneur,
 software developer, author, investor and businessman
-    """,['bill gates','bill','gates'],schat=True)
+    """,['bill gates','bill','gates'],chat=True)
 
     dns("""Jeffrey Preston Bezos is an American internet entrepreneur, industrialist, media owner, and investor,
 best known as the founder, CEO, and chairman of the worldwide technology company Amazon. Before 2017, 
 Bezos, who was one of the first hundred billionaires on the Forbes wealth index list, became the richest 
 man in the world after 2017.
-    """,['jeff','bezos','jeff bezos'],schat=True)
+    """,['jeff','bezos','jeff bezos'],chat=True)
 
 
     dns("""John Christopher Depp II is an American actor, producer and musician. Nominated for ten Golden Globe Awards, 
 he was nominated for an Academy Award for Best Actor for his role as 
 the Demon Barber in Sweeney Todd: The Demonic Barber of Fleet Street.
-    """,['johnny','Johnny','depp','Depp','Johnny Depp','johnny depp'],schat=True)
+    """,['johnny','Johnny','depp','Depp','Johnny Depp','johnny depp'],chat=True)
 
 
 
@@ -193,17 +192,17 @@ def chatbot(name):
         elif(x == "ls" or x == "LS"):
             os.system('ls')
         elif(x == "FACE" or x == "face"):
-            os.system('python3 EFace.py')
+            os.system('python3 ./scripts/EFace.py')
         elif(x == "dir" or x == "DIR"):
             os.system("dir")
         elif(x == "snake" or x == "apple"):
-            os.system("python3 ./data/snake.py")
+            os.system("python3 ./scripts/snake.py")
         elif(x == "menu"):
             menu()
         elif(x == "clear"):
             chatbot(name)
         elif(x == "load"):
-            os.system("bash ./data/load.sh")
+            os.system("bash ./scripts/load.sh")
 
 os.system("clear")
 print(Fore.GREEN+"""
@@ -216,6 +215,6 @@ print(Fore.GREEN+"""
 """)
 if __name__ == "__main__":
 
-    os.system("bash ./data/load.sh")
+    os.system("bash ./scripts/load.sh")
     name = input(Fore.BLUE+"Hello friend! please enter your name : ")
     chatbot(name)
