@@ -136,6 +136,7 @@ def info():
 [6] 'ls'    : To list files in directory
 [7] 'face'  : To run face dedection
 [8] 'info'  : To see E0's info
+[8] 'snake' : To play snake game
 ```
 
 
