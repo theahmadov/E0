@@ -47,10 +47,11 @@ def menu():
             |                                   |
             |  |-_-| Welcome to E0 Bot!  |-_-|  |
             -_________________-_________________-
-                    
-                    [1] Face Dedection  
-                    [2] Translate 
-                    [3] Play Snake Apple Game (I am the snake)  
+
+            [1] Face Dedection  
+            [2] Translate 
+            [3] Play Snake Apple Game (I am the snake)
+    
     """)
     print("")
     n = input(Fore.YELLOW+"Please select : ")
