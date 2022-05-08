@@ -82,6 +82,7 @@ def help():
     print(Fore.GREEN+"info  : To See E0's Info")
     print(Fore.GREEN+"snake : To Play Snake Game")
 
+
 def info():
     os.system("clear")
     print(Fore.BLUE+"""
@@ -112,6 +113,7 @@ def info():
 
 
 def check_all_messages(message):
+    point =100
     high = {}
     def dns(bchat, lw, chat=False, req=[]):
         nonlocal high
@@ -121,14 +123,16 @@ def check_all_messages(message):
     dns('See you!', ['bye', 'goodbye'], chat=True)
     dns('I\'m doing fine, and you?', ['how', 'are', 'you', 'doing'], req=['how'])
     dns('You\'re welcome!', ['thank', 'thanks'], chat=True)
-    dns('Thank you!', ['i', 'love', 'code', 'palace'], req=['code', 'palace'])
+    # Bad Words (Dont use them please. E0 is child for now)
+    dns(":( Dont use bad words please...",['anal','anus','ballsack','blowjob','blow job','boner','clitoris','cock','cunt','dick','dildo','dyke','fag','fuck','jizz','labia','muff','nigger','nigga','penis','piss','pussy','scrotum','sex','shit','slut','smegma','spunk','twat','vagina','wank','whore'])
+    dns('Thank you!', ['love', 'like', 'like you', 'love you'], req=['love you', 'like you'])
     dns('Sure!',['want', 'to', 'be', 'my','friend'],chat=True)
     dns('Sure! We can play snake game. I am snake and you are the apple : ) You must run. Or I will eat you. Type snake to play.',['oyun', 'birlikte', 'togather', 'play togather','you and me'],chat=True)
     dns('My name is E0. And I created by Err0r. Err0r is python,cpp and ruby developer and competitive programmer.',['name', 'who', 'who are you', 'who are you', 'who are you?','are you?','are you'],chat=True)
     dns('I know python,c and java script languages.',['want', 'ruby', 'cpp', 'python','which language','do you know ?','know?','know','programming language'],chat=True)
     dns('',["play?","game?",'what we can do?','what we can do','what we can','what we can?','what can you do?','what can you do','what can you?',"what can you"],chat=True)
     dns('Yess...',['are you okey?','you okey?','you ok?','you okey'],chat=True)
-    dns('Ah. I understand. I live in Github Repo. Write "github" for see it. My Discord :err0r#4018 ',['social','social media','discord','media'],chat=True)
+    dns('Ah. I understand. I live in Github Repo. Write "github" for see it. My Discord : err0r#4018 ',['social','social media','discord','media'],chat=True)
     dns('Some Music Advices : Old Town Road , Montero , SR - Welcome To Brixton , 6 For 6',['music','musik','muzik'],chat=True)
     
     dns('WOW', ['wow', 'awsome', 'good', 'good' , 'col' ,'cool'], chat=True)
