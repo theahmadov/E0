@@ -56,6 +56,8 @@ def menu():
     n = input(Fore.YELLOW+"Please select : ")
     if n=="1":
         os.system("python3 ./data/EFace.py")
+    if n=="2":
+        os.system("python3 ./data/translator.py")
     if n=="3":
         os.system("python3 ./data/snake.py")
 
