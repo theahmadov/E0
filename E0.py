@@ -55,9 +55,9 @@ def menu():
     print("")
     n = input(Fore.YELLOW+"Please select : ")
     if n=="1":
-        os.system("python3 ./scripts/EFace.py")
+        os.system("python3 ./data/EFace.py")
     if n=="3":
-        os.system("python3 ./scripts/snake.py")
+        os.system("python3 ./data/snake.py")
 
 def help():
     os.system("clear")
@@ -192,17 +192,17 @@ def chatbot(name):
         elif(x == "ls" or x == "LS"):
             os.system('ls')
         elif(x == "FACE" or x == "face"):
-            os.system('python3 ./scripts/EFace.py')
+            os.system('python3 ./data/EFace.py')
         elif(x == "dir" or x == "DIR"):
             os.system("dir")
         elif(x == "snake" or x == "apple"):
-            os.system("python3 ./scripts/snake.py")
+            os.system("python3 ./data/snake.py")
         elif(x == "menu"):
             menu()
         elif(x == "clear"):
             chatbot(name)
         elif(x == "load"):
-            os.system("bash ./scripts/load.sh")
+            os.system("bash ./data/load.sh")
 
 os.system("clear")
 print(Fore.GREEN+"""
@@ -215,6 +215,6 @@ print(Fore.GREEN+"""
 """)
 if __name__ == "__main__":
 
-    os.system("bash ./scripts/load.sh")
+    os.system("bash ./data/load.sh")
     name = input(Fore.BLUE+"Hello friend! please enter your name : ")
     chatbot(name)
