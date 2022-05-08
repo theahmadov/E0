@@ -1,10 +1,10 @@
 opencv-python
-os
 time
 colorama
 re
 requests
 bs4
-tqdm   
 csv
 logging
+speechrecognition
+blessed
