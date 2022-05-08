@@ -1,6 +1,7 @@
 import os
 import time
 from colorama import Fore,Back,Style
+from matplotlib.pyplot import xkcd
 from rich.progress import track
 import E1 as E0
 import requests
@@ -10,6 +11,7 @@ import csv
 import logging
 import cv2 
 from tqdm import tqdm
+
 
 """
 If you use windows please change
@@ -49,12 +51,14 @@ def menu():
             -_________________-_________________-
                     
                     [1] Face Dedection  
+                    [1] Play Snake Apple Game (I am the snake)  
     """)
     print("")
     n = input(Fore.YELLOW+"Please select : ")
     if n=="1":
         os.system("python3 EFace.py")
-
+    if n=="2":
+        os.system("python3 ./data/snake.py")
 
 def help():
     os.system("clear")
@@ -74,6 +78,7 @@ def help():
     print(Fore.GREEN+"ls    : To List Files In Directory")
     print(Fore.GREEN+"face  : To Run Face Dedection")
     print(Fore.GREEN+"info  : To See E0's Info")
+    print(Fore.GREEN+"snake : To Play Snake Game")
 
 def info():
     os.system("clear")
@@ -93,14 +98,15 @@ def info():
             This means you can see my code and can edit
             them for yourself. For this Error shared 
             my code in his own github repo. Let me explain
-            E0 logic. Logic : 
+            E0 logic. 
+            
+            Logic : 
             User input a sentence or words probability
             function searching for probability. Which words 
             probability suitability is bigger in database
             E0 prints answear of the word base. Its simple AI. 
 
     """)
-
 
 
 def check_all_messages(message):
@@ -115,6 +121,7 @@ def check_all_messages(message):
     dns('You\'re welcome!', ['thank', 'thanks'], schat=True)
     dns('Thank you!', ['i', 'love', 'code', 'palace'], req=['code', 'palace'])
     dns('Sure!',['want', 'to', 'be', 'my','friend'],schat=True)
+    dns('Sure! We can play snake game. I am snake and you are the apple : ) You must run. Or I will eat you. Type snake to play.',['oyun', 'birlikte', 'togather', 'play togather','you and me'],schat=True)
     dns('My name is E0. And I created by Err0r. Err0r is python,cpp and ruby developer and competitive programmer.',['name', 'who', 'who are you', 'who are you', 'who are you?','are you?','are you'],schat=True)
     dns('I know python,c and java script languages.',['want', 'ruby', 'cpp', 'python','which language','do you know ?','know?','know','programming language'],schat=True)
     dns('',["play?","game?",'what we can do?','what we can do','what we can','what we can?','what can you do?','what can you do','what can you?',"what can you"],schat=True)
@@ -173,7 +180,6 @@ def chatbot(name):
     """)
     
     while True:
-
         x = input(Fore.YELLOW+f'[{name}] : ')
         print(Fore.GREEN+'[E0] : ' + chat(x) )
         if(x == "exit" or x == "quit" or x == 'break'):
@@ -190,6 +196,8 @@ def chatbot(name):
             os.system('python3 EFace.py')
         elif(x == "dir" or x == "DIR"):
             os.system("dir")
+        elif(x == "snake" or x == "apple"):
+            os.system("python3 ./data/snake.py")
         elif(x == "menu"):
             menu()
         elif(x == "clear"):
