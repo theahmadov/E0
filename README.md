@@ -1,4 +1,4 @@
-# E0 AI Chat Bot
+# E0 AI Chat Bot ![](https://visitor-badge.glitch.me/badge?page_id=TheSadError.TheSadError)
 Based on the message, it prints the answer with the highest probability using probability from the database.
 # Install on linux (Arch,Debian,Termux)
 
