@@ -13,14 +13,6 @@ import cv2
 from tqdm import tqdm
 
 
-"""
-If you use windows please change
-os.system("clear")
-to 
-os.system("cls")
-than it will work
-"""
-
 def probability(w1, w2, chat=False, req=[]):
     count = 0
     bool = True
@@ -36,7 +28,6 @@ def probability(w1, w2, chat=False, req=[]):
         return int(per * 100)
     else:
         return 0
-
 
 
 def menu():
@@ -118,6 +109,7 @@ def check_all_messages(message):
     def dns(bchat, lw, chat=False, req=[]):
         nonlocal high
         high[bchat] = probability(message, lw, chat, req)
+
     # Simple
     dns('Hello!', ['hello', 'hi', 'hey', 'sup', 'heyo','hola','salam','merhaba','selam','السلام عليكم','عليكم','السلام'], chat=True)
     dns('See you!', ['bye', 'goodbye'], chat=True)
