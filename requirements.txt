@@ -8,3 +8,6 @@ csv
 logging
 speechrecognition
 blessed
+googletrans
+pprint
+translate
