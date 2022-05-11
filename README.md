@@ -139,5 +139,11 @@ def info():
 [8] 'snake' : To play snake game
 ```
 
+**Donation :**
+```
+TR05 0006 2000 0280 0009 0525 31
+Name : Teymur Ahmetzade
+USD Type
+```
 
 **Copright To Error**
